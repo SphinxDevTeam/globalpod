@@ -20,6 +20,5 @@ def songs():
     return render_template('songs.html')
 
 if __name__ == '__main__':
-    # Use the PORT environment variable set by Railway, defaulting to 8000 if not found
     port = int(os.environ.get("PORT", 8000))
     app.run(host="0.0.0.0", port=port, debug=False)
