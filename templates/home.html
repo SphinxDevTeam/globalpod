@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalPod Neon</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        @keyframes neonPulse {
+            0% { box-shadow: 0 0 5px #4f46e5, 0 0 10px #4f46e5, 0 0 15px #4f46e5; }
+            50% { box-shadow: 0 0 10px #4f46e5, 0 0 20px #4f46e5, 0 0 30px #4f46e5; }
+            100% { box-shadow: 0 0 5px #4f46e5, 0 0 10px #4f46e5, 0 0 15px #4f46e5; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .neon-button {
+            animation: neonPulse 2s infinite;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .neon-button:hover {
+            transform: scale(1.05);
+            animation: none;
+            box-shadow: 0 0 20px #4f46e5, 0 0 40px #4f46e5, 0 0 60px #4f46e5;
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans leading-relaxed antialiased overflow-x-hidden">
+    <!-- Navbar -->
+    <header class="fixed w-full z-50 glassmorphism">
+        <div class="container mx-auto flex justify-between items-center p-5">
+            <a href="/home" class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500 hover:from-purple-500 hover:to-blue-500 transition-all duration-500">
+                GlobalPod Neon
+            </a>
+            <nav class="space-x-6">
+                <a href="/home" class="hover:text-blue-400 transition-colors duration-300">Home</a>
+                <a href="/library" class="hover:text-purple-400 transition-colors duration-300">Library</a>
+                <a href="/songs" class="hover:text-pink-400 transition-colors duration-300">Music</a>
+                <a href="/home" class="neon-button px-4 py-2 rounded-full bg-indigo-600 hover:bg-indigo-700">Connect</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen relative overflow-hidden pt-24">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-black opacity-50"></div>
+        <div class="container mx-auto relative z-10 px-4 py-32 text-center">
+            <div class="floating">
+                <h1 class="text-6xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+                    Future is Now
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Experience the next generation of digital creativity with unlimited AI-powered music.
+                </p>
+                <a href="/songs" class="neon-button px-8 py-4 text-lg rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 transition-all duration-500 inline-block">
+                    Launch Experience
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-24 bg-gradient-to-b from-black to-indigo-900">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glassmorphism p-8 rounded-2xl hover:scale-105 transition-transform duration-300">
+                    <div class="text-blue-400 text-4xl mb-4">🎵</div>
+                    <h3 class="text-2xl font-bold mb-4">Limitless AI Music</h3>
+                    <p class="text-gray-400">Experience an endless stream of fresh, AI-generated music that keeps you engaged with limitless variety and continuous production.</p>
+                </div>
+                <div class="glassmorphism p-8 rounded-2xl hover:scale-105 transition-transform duration-300">
+                    <div class="text-purple-400 text-4xl mb-4">🎶</div>
+                    <h3 class="text-2xl font-bold mb-4">Curated Music Library</h3>
+                    <p class="text-gray-400">Access an evolving collection of AI-generated tracks tailored to your style.</p>
+                </div>
+                <div class="glassmorphism p-8 rounded-2xl hover:scale-105 transition-transform duration-300">
+                    <div class="text-pink-400 text-4xl mb-4">🌟</div>
+                    <h3 class="text-2xl font-bold mb-4">Immersive Experiences</h3>
+                    <p class="text-gray-400">Dive into audio adventures with genre-bending music experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-24 bg-gradient-to-t from-black to-indigo-900 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+                Ready to Transform?
+            </h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Join the revolution of digital creativity and innovation.
+            </p>
+            <a href="/home" class="neon-button px-8 py-4 text-lg rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600 transition-all duration-500 inline-block">
+                Begin Journey
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glassmorphism py-8">
+        <div class="container mx-auto px-4 text-center">
+        </div>
+    </footer>
+</body>
+</html>
