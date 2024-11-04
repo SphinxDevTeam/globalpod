@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Routes
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('home.html')
 
 @app.route('/security')
 def security():
@@ -41,4 +41,4 @@ def contact_success():
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
