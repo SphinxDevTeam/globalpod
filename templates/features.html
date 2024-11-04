@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rho-9 Features - Discord Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.9);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(99, 102, 241, 0.5);
+            border-radius: 6px;
+            border: 3px solid rgba(15, 23, 42, 0.9);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(99, 102, 241, 0.7);
+        }
+
+        .glow {
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+        .neon-border {
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+        }
+        
+        /* Firefox Scrollbar */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(99, 102, 241, 0.5) rgba(15, 23, 42, 0.9);
+        }
+
+        .feature-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-900 text-white">
+    <!-- Background Effects -->
+    <div class="fixed inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.15),transparent_50%)] pointer-events-none"></div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-slate-900/90 backdrop-blur-xl z-50 border-b border-indigo-500/20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center py-6">
+                    <a href="/">
+                        <img src="https://i.imgur.com/VXOYS19.png" alt="Rho-9 Security Bot" class="h-50 w-40" />
+                    </a>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="/" class="text-slate-300 hover:text-white hover:glow">Home</a>
+                    <a href="/security" class="text-slate-300 hover:text-white hover:glow">Security</a>
+                    <a href="https://discord.com/oauth2/authorize?client_id=1092473933711810570&permissions=8&scope=bot&utm_source=discordbotlist.com&utm_medium=bot_page" target="_blank" rel="noopener noreferrer" class="bg-indigo-600/80 hover:bg-indigo-500 px-4 py-2 rounded-lg neon-border transition-all">
+                        Add to Discord
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-4 py-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-16 glow">Security Features</h1>
+        
+        <div class="space-y-8">
+            <!-- Account Age Limit -->
+            <div class="feature-card bg-indigo-500/10 rounded-xl p-8 border border-indigo-500/30">
+                <div class="flex items-start space-x-6">
+                    <div class="bg-indigo-500/20 p-4 rounded-lg shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold mb-3">Account Age Limit</h2>
+                        <p class="text-slate-300">Bot will automatically kick new accounts unless they are at least 7 days 1 minute old. This helps prevent raids and spam from newly created accounts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anti-Grabify -->
+            <div class="feature-card bg-indigo-500/10 rounded-xl p-8 border border-indigo-500/30">
+                <div class="flex items-start space-x-6">
+                    <div class="bg-indigo-500/20 p-4 rounded-lg shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold mb-3">Anti-Grabify Protection</h2>
+                        <p class="text-slate-300">We'll blacklist any grabify domain you report. We share your concern about privacy invasion and actively work to protect your community from tracking attempts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anti-Phishing Scanner -->
+            <div class="feature-card bg-indigo-500/10 rounded-xl p-8 border border-indigo-500/30">
+                <div class="flex items-start space-x-6">
+                    <div class="bg-indigo-500/20 p-4 rounded-lg shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold mb-3">Anti-Phishing/Scam Scanner</h2>
+                        <p class="text-slate-300">Rho-9 actively scans all links and compares them to our dual database. If a domain or URL matches our entries, the message will be deleted and the user will be banned to protect your community.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Reporting System -->
+            <div class="feature-card bg-indigo-500/10 rounded-xl p-8 border border-indigo-500/30">
+                <div class="flex items-start space-x-6">
+                    <div class="bg-indigo-500/20 p-4 rounded-lg shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold mb-3">User Reporting System</h2>
+                        <p class="text-slate-300">Report users who consistently demonstrate malicious behavior or negatively impact the Discord experience for others. Help us maintain a safe environment for everyone.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Link Risk Reporting -->
+            <div class="feature-card bg-indigo-500/10 rounded-xl p-8 border border-indigo-500/30">
+                <div class="flex items-start space-x-6">
+                    <div class="bg-indigo-500/20 p-4 rounded-lg shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold mb-3">Link Risk Reporting System</h2>
+                        <p class="text-slate-300">Report suspicious links not currently detected by our bot. Risk levels:</p>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                                <span class="font-semibold text-red-400">High Risk:</span>
+                                <span class="ml-2 text-slate-300">Extremely dangerous (malware, etc.)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
+                                <span class="font-semibold text-yellow-400">Medium Risk:</span>
+                                <span class="ml-2 text-slate-300">Convincing scams, shady websites</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                                <span class="font-semibold text-blue-400">Low Risk:</span>
+                                <span class="ml-2 text-slate-300">Possible inconvenience, but not dangerous</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                <span class="font-semibold text-green-400">Safe:</span>
+                                <span class="ml-2 text-slate-300">Report false positives</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4">
+        <div class="max-w-6xl mx-auto flex justify-center">
+        </div>
+    </footer>
+</body>
+</html>

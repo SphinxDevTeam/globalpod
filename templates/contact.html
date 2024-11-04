@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rho-9 Contact Form - Discord Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.9);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(99, 102, 241, 0.5);
+            border-radius: 6px;
+            border: 3px solid rgba(15, 23, 42, 0.9);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(99, 102, 241, 0.7);
+        }
+
+        .glow {
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+        .neon-border {
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+        }
+        
+        /* Firefox Scrollbar */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(99, 102, 241, 0.5) rgba(15, 23, 42, 0.9);
+        }
+
+        /* Input Focus Styles */
+        input:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-900 text-white">
+    <!-- Background Effects -->
+    <div class="fixed inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.15),transparent_50%)] pointer-events-none"></div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-slate-900/90 backdrop-blur-xl z-50 border-b border-indigo-500/20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center py-6">
+                    <a href="/">
+                        <img src="https://i.imgur.com/VXOYS19.png" alt="Rho-9 Security Bot" class="h-50 w-40" />
+                    </a>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="/" class="text-slate-300 hover:text-white hover:glow">Home</a>
+                    <a href="/security" class="text-slate-300 hover:text-white hover:glow">Security</a>
+                    <a href="https://discord.com/oauth2/authorize?client_id=1092473933711810570&permissions=8&scope=bot&utm_source=discordbotlist.com&utm_medium=bot_page" target="_blank" rel="noopener noreferrer" class="bg-indigo-600/80 hover:bg-indigo-500 px-4 py-2 rounded-lg neon-border transition-all">
+                        Add to Discord
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-2xl mx-auto px-4 py-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-6 glow">Contact Form</h1>
+        <p class="text-center text-slate-400 mb-12">Rho-9 lacklist Appeal Form</p>
+
+        <!-- Contact Form -->
+        <form action="mailto:rho-9@rho-9.com" method="POST" enctype="text/plain" class="space-y-6 bg-indigo-500/5 rounded-xl p-8 border border-indigo-500/30">
+            <!-- Email Address -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Your Email Address</label>
+                <input type="email" id="email" name="email" required
+                    class="w-full px-4 py-2 bg-slate-800/50 border border-indigo-500/30 rounded-lg text-white placeholder-slate-500 focus:border-indigo-500"
+                    placeholder="your.email@example.com">
+            </div>
+
+            <!-- Discord Username -->
+            <div>
+                <label for="username" class="block text-sm font-medium text-slate-300 mb-2">Discord Username</label>
+                <input type="text" id="username" name="username" required
+                    class="w-full px-4 py-2 bg-slate-800/50 border border-indigo-500/30 rounded-lg text-white placeholder-slate-500 focus:border-indigo-500">
+            </div>
+
+            <!-- Discord UserID -->
+            <div>
+                <label for="userid" class="block text-sm font-medium text-slate-300 mb-2">Discord UserID</label>
+                <input type="text" id="userid" name="userid" required
+                    class="w-full px-4 py-2 bg-slate-800/50 border border-indigo-500/30 rounded-lg text-white placeholder-slate-500 focus:border-indigo-500">
+            </div>
+
+            <!-- Blacklist Reason -->
+            <div>
+                <label for="reason" class="block text-sm font-medium text-slate-300 mb-2">Why were you blacklisted?</label>
+                <textarea id="reason" name="reason" rows="3" required
+                    class="w-full px-4 py-2 bg-slate-800/50 border border-indigo-500/30 rounded-lg text-white placeholder-slate-500 focus:border-indigo-500"></textarea>
+            </div>
+
+            <!-- Appeal Reason -->
+            <div>
+                <label for="appeal" class="block text-sm font-medium text-slate-300 mb-2">Why should you be unblacklisted?</label>
+                <textarea id="appeal" name="appeal" rows="4" required
+                    class="w-full px-4 py-2 bg-slate-800/50 border border-indigo-500/30 rounded-lg text-white placeholder-slate-500 focus:border-indigo-500"></textarea>
+            </div>
+
+            <!-- Consent Checkbox -->
+            <div class="flex items-start">
+                <div class="flex items-center h-5">
+                    <input id="consent" name="consent" type="checkbox" required
+                        class="w-4 h-4 bg-slate-800/50 border border-indigo-500/30 rounded text-indigo-500 focus:ring-indigo-500">
+                </div>
+                <div class="ml-3">
+                    <label for="consent" class="text-sm text-slate-300">
+                        I accept that the above information may be used to contact me
+                    </label>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" 
+                class="w-full bg-indigo-600/80 hover:bg-indigo-500 px-6 py-3 rounded-xl font-semibold neon-border transition-all text-center">
+                Submit Appeal
+            </button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4">
+        <div class="max-w-6xl mx-auto flex justify-center">
+        </div>
+    </footer>
+</body>
+</html>
