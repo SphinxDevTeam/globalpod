@@ -39,6 +39,11 @@ def contact():
 def contact_success():
     return render_template('contact_success.html')
 
+@app.route('/issues')
+def issues():
+    return render_template('issues.html')
+
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
