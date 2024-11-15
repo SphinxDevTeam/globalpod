@@ -29,7 +29,7 @@ def terms():
 
 @app.route('/blacklist')
 def blacklist():
-    return render_template('blacklist.html')
+    return render_template('terms.html')
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
@@ -46,4 +46,4 @@ def issues():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
